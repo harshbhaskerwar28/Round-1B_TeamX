@@ -1,0 +1,77 @@
+{
+    "metadata": {
+        "input_documents": [
+            "Breakfast Ideas.pdf",
+            "Dinner Ideas - Mains_1.pdf",
+            "Dinner Ideas - Mains_2.pdf",
+            "Dinner Ideas - Mains_3.pdf",
+            "Dinner Ideas - Sides_1.pdf",
+            "Dinner Ideas - Sides_2.pdf",
+            "Dinner Ideas - Sides_3.pdf",
+            "Dinner Ideas - Sides_4.pdf",
+            "Lunch Ideas.pdf"
+        ],
+        "persona": "Food Contractor",
+        "job_to_be_done": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items.",
+        "processing_timestamp": "2025-07-28T22:51:00.912113"
+    },
+    "extracted_sections": [
+        {
+            "document": "Breakfast Ideas.pdf",
+            "section_title": "\u2022 Serve immediately.",
+            "importance_rank": 1,
+            "page_number": 16
+        },
+        {
+            "document": "Dinner Ideas - Mains_3.pdf",
+            "section_title": "\u2022 1 bell pepper, diced",
+            "importance_rank": 2,
+            "page_number": 9
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "section_title": "o Drain on paper towels and serve.",
+            "importance_rank": 3,
+            "page_number": 8
+        },
+        {
+            "document": "Dinner Ideas - Mains_1.pdf",
+            "section_title": "\u2022 Shredded lettuce, diced tomatoes, shredded cheese, sour cream, and salsa for toppings",
+            "importance_rank": 4,
+            "page_number": 5
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "section_title": "o Preheat oven to 375\u00b0F (190\u00b0C).",
+            "importance_rank": 5,
+            "page_number": 12
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "document": "Breakfast Ideas.pdf",
+            "refined_text": "cottage cheese and Veggie Bowl Ingredients: 1 cup cottage cheese, 1 cup diced cucumber, 1/4 cup cherry tomatoes, halved . salt and pepper to taste Instructions: sprinkle almond butter on each apple slice.",
+            "page_number": 16
+        },
+        {
+            "document": "Dinner Ideas - Mains_3.pdf",
+            "refined_text": "in a skillet, heat olive oil over medium heat . saut\u00e9 onion, garlic, zucchini, and bell pepper until tender . add ricotta cheese, egg, salt, and pepper .",
+            "page_number": 9
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "refined_text": "saut\u00e9 diced bacon, onion, and minced garlic in butter until crispy . add cassava flour and cook, stirring constantly, until golden .",
+            "page_number": 8
+        },
+        {
+            "document": "Dinner Ideas - Mains_1.pdf",
+            "refined_text": "in a skillet, cook ground beef, diced onion, and minced garlic until browned . saut\u00e9 until softened; stir in taco seasoning and water, simmer for 10 minutes . chicken Alfredo Ingredients: 1 pound ground beef .",
+            "page_number": 5
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "refined_text": "o Preheat oven to 375\u00b0F (190\u00b0C) for 30 minutes . o 4 tomatoes, 1 cucumber, 1 small red onion, 1 bell pepper, 1 tablespoon olive oil, 1 teaspoon salt, and 1/2 teaspoon pepper, o 2 tablespoons red wine vinegar .",
+            "page_number": 12
+        }
+    ]
+}
