@@ -57,25 +57,141 @@ python run.py
 
 ## 📊 How It Works
 
-### 1. **Document Processing** 📄
-- Extracts text from PDF documents using `pdfplumber`
-- Breaks content into manageable sections by page
-- Preserves document structure and metadata
+### 🔄 **Process Flow Diagram**
 
-### 2. **AI-Powered Analysis** 🧠
-- Generates semantic embeddings using `sentence-transformers`
-- Creates a "query" based on persona and task requirements
-- Computes similarity scores between content and query
+```mermaid
+graph TD
+    A[📄 PDF Documents] --> B[📋 Input Configuration]
+    B --> C[🔧 Document Processing]
+    
+    C --> D[📄 PDF Text Extraction]
+    D --> E[📝 Section Breakdown]
+    E --> F[🧹 Content Filtering]
+    
+    F --> G[🧠 AI Embedding Generation]
+    G --> H[🎯 Query Creation]
+    H --> I[📊 Similarity Computation]
+    
+    I --> J[📈 Content Ranking]
+    J --> K[🏆 Top Section Selection]
+    K --> L[✨ AI Summarization]
+    
+    L --> M[📋 Output Generation]
+    M --> N[💾 JSON Results]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fff3e0
+    style F fill:#fff3e0
+    style G fill:#fce4ec
+    style H fill:#fce4ec
+    style I fill:#fce4ec
+    style J fill:#e0f2f1
+    style K fill:#e0f2f1
+    style L fill:#f1f8e9
+    style M fill:#e3f2fd
+    style N fill:#e8f5e8
+```
 
-### 3. **Intelligent Ranking** 📈
-- Ranks sections by relevance to the persona's needs
-- Removes duplicates and selects top results
-- Assigns importance scores to each section
+### 📋 **Detailed Process Steps**
 
-### 4. **Smart Summarization** ✨
-- Uses T5 transformer model for content refinement
-- Generates concise, relevant summaries
-- Maintains context and key information
+#### 1. **📄 Document Processing** 
+```
+PDF Files → Text Extraction → Section Breakdown → Content Filtering
+```
+- **Input**: Multiple PDF documents
+- **Tool**: `pdfplumber` for text extraction
+- **Output**: Structured sections with metadata
+- **Filter**: Removes empty/invalid content
+
+#### 2. **🧠 AI-Powered Analysis**
+```
+Persona + Task → Query Creation → Embedding Generation → Similarity Scoring
+```
+- **Query**: Combines persona role + job requirements
+- **Model**: `sentence-transformers` (all-MiniLM-L6-v2)
+- **Process**: Generates embeddings for query and all sections
+- **Scoring**: Cosine similarity computation
+
+#### 3. **📈 Intelligent Ranking**
+```
+Similarity Scores → Content Ranking → Deduplication → Top Selection
+```
+- **Algorithm**: Cosine similarity-based ranking
+- **Deduplication**: Removes duplicate sections
+- **Selection**: Top 5 most relevant sections
+- **Output**: Ranked list with importance scores
+
+#### 4. **✨ Smart Summarization**
+```
+Top Sections → T5 Model → Content Refinement → Summary Generation
+```
+- **Model**: T5-small transformer
+- **Process**: Tokenization → Summarization → Refinement
+- **Output**: Concise, relevant summaries
+- **Quality**: Maintains context and key information
+
+### 🔧 **Technical Architecture**
+
+```mermaid
+graph LR
+    subgraph "Input Layer"
+        A1[📄 PDFs] --> A2[📋 JSON Config]
+    end
+    
+    subgraph "Processing Layer"
+        B1[📊 PDF Utils] --> B2[🧠 Embedding]
+        B2 --> B3[📈 Ranking]
+        B3 --> B4[✨ Summarization]
+    end
+    
+    subgraph "Output Layer"
+        C1[📋 Schema Validation] --> C2[💾 JSON Output]
+    end
+    
+    A1 --> B1
+    A2 --> B1
+    B4 --> C1
+    
+    style A1 fill:#e1f5fe
+    style A2 fill:#f3e5f5
+    style B1 fill:#e8f5e8
+    style B2 fill:#fce4ec
+    style B3 fill:#e0f2f1
+    style B4 fill:#f1f8e9
+    style C1 fill:#fff3e0
+    style C2 fill:#e8f5e8
+```
+
+### ⚡ **Performance Flow**
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant D as Docker
+    participant R as run.py
+    participant A as app.py
+    participant AI as AI Models
+    participant O as Output
+
+    U->>D: docker run
+    D->>R: Execute run.py
+    R->>A: Process collection
+    A->>AI: Load models
+    AI-->>A: Models ready
+    A->>A: Extract PDF content
+    A->>AI: Generate embeddings
+    AI-->>A: Embeddings ready
+    A->>A: Rank content
+    A->>AI: Summarize sections
+    AI-->>A: Summaries ready
+    A->>O: Generate JSON
+    O-->>R: Save results
+    R-->>D: Process complete
+    D-->>U: Results available
+```
 
 ## 📋 Input Format
 
