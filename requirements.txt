@@ -1,7 +1,0 @@
-pdfplumber
-sentence-transformers
-transformers
-torch
-pydantic
-scipy
-numpy
